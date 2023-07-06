@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>port Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/13a6868b14.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header> 
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achivements">Achivements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    
+    <section class="home" id="home">
+        <div class="home-left">
+            <h1>Hi,i'm <span>Shiva</span><br>Dharshan from Coimbatore</h1><br>
+            <p>I'm a front-end Developer</p></div>
+            
+        <div class="home-right">
+           <img src="images/animated.webp">
+        </div>
+    </section>
+    
+ <!------------about--------- -->
+ 
+    <section id="about">
+          <div class="row"> <img src="images/about me.jpg"> </div> 
+            <div class="col1"><h1>About me</h1>
+                <p>A enthusiastic front end developer who has creative design thinking skills to make atractive web sites and sharpening my knowledge to become a Full stack developer in the future.<br>Now looking for a job experience</p>
+            </div>
+            <div class="col2">
+                 <div class="tab-titles">
+                    <p class="tab-links active-link   " onclick="opentab('skills')">Technical skills</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <div class="icon_cont">
+                        <i class="fa-brands fa-square-js" style="color:rgb(249, 133, 0);" id="js"></i>
+                        <i class="fa-brands fa-html5" style="color: rgb(249, 133, 0);" id="html"></i>
+                        <i class="fa-brands fa-css3-alt" style="color: rgb(249, 133, 0);" id="css"></i>
+                        <i class="fa-brands fa-java" style="color: rgb(249, 133, 0);"></i>
+                    </div>
+                </div>    
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>2023-current</span><br>Persuing my 3nd year UG in SECE as a electronics and communication engineer</li>
+                        <li><span>2021</span><br>Got 88% in my HSLC </li>
+                        <li><span>2019</span><br>Got 88% in my SSLC</li>
+                    </ul>
+                </div> 
+            </div>
+    </section> 
+ <!-----------Projects----------->
+ <section id="projects">
+        <h1 style="display: block;">My Projects</h1>
+
+        <div class="projects-list">
+            <div>
+                <i class="fa-regular fa-pen-to-square"></i>
+                <h2>Front-end Developing</h2>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Smart Blind stick</h2>
+            </div>
+        </div>
+ </section>
+ <!-------------Achivements---------------->
+ <section id="achivements">
+        <div class="sub-title"><h1>My Achivements</h1></div>
+        <div class="achivements-list">
+            <div class="achivement">
+                <img src="images/work2.jpg"> 
+                <div class="layer">
+                    <h3>Web sites</h3>
+                    <p>Developed lot of web sites with cool fornt-end works</p>
+                    <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
+                </div>
+            </div>
+            <div class="achivement">
+                <img src="images/work3.jpg">
+                <div class="layer">
+                    <h3>Problem solving </h3>
+                    <p>solved 1200+ problems in "skillrack"<br>
+                       100+ problems in "LeetCode"
+                       using java,c,and python.
+                    </p>
+                    <a href="#"><i class="fa-solid fa-code"></i></a>
+                </div> 
+            </div> 
+        </div>
+ </section>
+ 
+ <!-----------contact------------->
+ <section id="contact">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>shivadharshan50@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>7094615211</p>
+                <div class="social-icons">
+                    <a href<i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a herf="" class="btn btn2">Download Cv</a>
+            </div>
+            <div class="contact-right">
+                <h1>Send me a message now!</h1>
+                <form>
+                    <input type="text" placeholder="name">
+                    <textarea placeholder="message"></textarea>
+                </form>
+                <button class="btn btn3">send</button>
+            </div>
+ </section>
+ <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    const send=document.querySelector(".btn.btn3");
+    function opentab(tabname){
+        for(tablink of tablinks)
+        {
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents)
+        {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+    send.addEventListener('click',function(bgclr){
+        send.animate
+        send.textContent="sent !"
+        send.style.backgroundColor="green"
+        send.style.border="none"
+        
+    })
+ </script>
+</body>
+</html>
