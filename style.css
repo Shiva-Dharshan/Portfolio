@@ -23,12 +23,40 @@ section{
     z-index: 1;
     height: 75px;
     display: flex;
-    flex-wrap: wrap;
     justify-content:flex-end;
     align-items: center;
     background-color:var(--orange);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+}
+.bars{
+    z-index: 10;
+    color: violet;
+    font-size: xx-large;
+}
+.drop{
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    width: fit-content;
+    top:75px;
+}
+.drop li{
+    padding: 10px 40px;
+    background-color: red;
+}
+.drop a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+@media (max-width:768px){
+    .nav li{
+        display: none;
+    }
+    .drop{
+        display: block;
+    }
 }
 .nav li{
     list-style: none;
@@ -54,10 +82,6 @@ section{
 }
 .nav li a:hover::after{
     height:6px;
-}
-.nav li a:hover{
-    color: black;
-    transform: scale(1.1);
 }
 .home{
     background-color: black;
@@ -110,8 +134,24 @@ section{
     padding-top: 120px;
 }
 .row img{
-    width: 500px;
+    width: 400px;
     border-radius: 20px;
+    position: absolute;
+    transform-style: preserve-3d;
+    margin-top: -20px;
+    transition: 2s;
+}
+.row img:hover{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+@keyframes float{
+   50%{
+    margin-top: -40px;
+   }
+   100%{
+    margin-top: -20px;
+   }
 }
 .col1{padding:0px 10px;
      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -181,48 +221,22 @@ section{
     display: flex;
     justify-content: space-between;
     width: inherit;
+    opacity: 0.1;
     animation: stretch 1.5s;
     animation-fill-mode: forwards;
 }
-.tab-contents.active-tab i{
-    animation: size;
-    animation-fill-mode: forwards;
-    animation-duration: 3s;
-    height: 100px;
-    text-align: center;
-    font-size: 100px;
+.icon_cont img{
+    width: 100px;
+    height: 150px;
 }
 @keyframes stretch {
-  from{width: 0;}
-  to{width: 100%;}
+  from{width: 50%;}
+  to{width: 100%; opacity: 1;}
 }
-@keyframes size{
-    0%{width: 0;}
-    25%{width: 25px;}
-    50%{width: 50px;}
-    100%{width: 100px;}
-}
-/* #js{
-  
-
-}
-#html{
-    
-    
-}
-#css{
-   
-   
-}
-*/
 #react{
     z-index: 10;
     background-color: black;
 } 
-/* .tab-c
-ontents.active-tab i:hover{
-    /* transform: translateY(10px);
-} */ 
 /*----------projects--------*/
 #projects{
     height: 60vh;
@@ -268,11 +282,8 @@ ontents.active-tab i:hover{
     margin-top: 10px;
     transition:all 0.5s;
 }
-.projects-list div a:hover{
-    cursor: pointer;
-    text-decoration: underline;
-}
 .projects-list div:hover{
+    cursor: pointer;
     background-color:var(--orange);
     transform: translateY(-10px);
 }
@@ -366,6 +377,7 @@ ontents.active-tab i:hover{
     gap: 20px;
 }
 form{
+    margin-top: 1pc;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -376,25 +388,27 @@ input{
     border: none;
     outline: none;
     padding: 10px;
+    font-size: 20px;
     color: white;
     border-radius:4px;
     left:0;
     background-color: rgb(90, 87, 87);
 }
 input::placeholder{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 textarea{
     height: 100px;
     border: none;
     border-radius: 4px;
     padding: 10px;
+    font-size: 20px;
     outline: none;
     color: white;
     background-color: rgb(90, 87, 87);
 }
 textarea::placeholder{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .contact-left p{
     color: white;
@@ -442,5 +456,6 @@ textarea::placeholder{
 }
 
 .btn.btn3:hover{
-    background-color: rgb(23, 22, 22);
+    cursor: pointer;
+    background-color: rgb(70, 69, 68);
 }
